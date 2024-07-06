@@ -5,7 +5,6 @@ import { toast } from "sonner";
 
 type TFormInput = {
   name: string;
-  proficiency: string;
 };
 
 type TProps = {
@@ -24,6 +23,7 @@ const AddSkillModal = ({ isAddSkill, setIsAddSkill }: TProps) => {
         toast.success(result.message);
       }
       reset();
+      setIsAddSkill(false); 
     } catch (error) {
       console.error(error);
       toast.error("Something went wrong!");
@@ -35,25 +35,19 @@ const AddSkillModal = ({ isAddSkill, setIsAddSkill }: TProps) => {
         !isAddSkill && "hidden"
       } fixed top-0 left-0 w-full flex justify-center items-center min-h-screen z-40 bg-gray-700/80 py-10 px-4`}
     >
-      <div className="w-[400px] min-h-[500px] rounded-md overflow-hidden p-4 bg-gray-100">
-        <h2 className="text-2xl font-semibold text-gray-700 mb-10">
+      <div className="w-[400px] min-h-[300px] rounded-md overflow-hidden p-4 bg-[#09867E] text-white">
+        <h2 className="text-2xl text-center font-semibold text-white mb-10">
           Add Skill
         </h2>
         <form onSubmit={handleSubmit(onSubmit)}>
           <input
             type="text"
             className="input input-bordered border-gray-400 w-full bg-gray-100 text-gray-700 mb-5"
-            placeholder="Name"
+            placeholder="Skill Name"
             {...register("name", { required: true })}
           />
-          <input
-            className="input input-bordered border-gray-400 w-full bg-gray-100 text-gray-700 mb-5"
-            type="text"
-            placeholder="Proficiency"
-            {...register("proficiency", { required: true })}
-          />
           <button
-            className="flex items-center justify-center gap-1 bg-cyan-600 hover:bg-cyan-700 transition-all duration-300 ease-in-out text-gray-100 font-semibold w-full py-3 rounded-md mb-3"
+            className="flex items-center justify-center gap-1 bg-[#091886] text-gray-100 font-semibold w-full py-3 rounded-md mb-3"
             type="submit"
           >
             {isLoading && <SmallSpinner />}

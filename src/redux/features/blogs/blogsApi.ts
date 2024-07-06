@@ -11,7 +11,7 @@ const blogsApi = baseApi.injectEndpoints({
     }),
     createBlog: builder.mutation({
       query: (data) => ({
-        url: "/blogs",
+        url: "/blog",
         method: "POST",
         body: data,
       }),
@@ -19,7 +19,7 @@ const blogsApi = baseApi.injectEndpoints({
     }),
     editBlog: builder.mutation({
       query: ({ blogId, data }) => ({
-        url: `/blogs/${blogId}`,
+        url: `/blog/${blogId}`,
         method: "PUT",
         body: data,
       }),
@@ -27,7 +27,7 @@ const blogsApi = baseApi.injectEndpoints({
     }),
     deleteBlog: builder.mutation({
       query: (blogId) => ({
-        url: `/blogs/${blogId}`,
+        url: `/blog/${blogId}`,
         method: "DELETE",
       }),
       invalidatesTags: ["blogs"],

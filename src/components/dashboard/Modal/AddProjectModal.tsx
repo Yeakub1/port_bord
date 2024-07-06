@@ -44,6 +44,7 @@ const AddProjectModal = ({ isAddProject, setIsAddProject }: TProps) => {
         toast.success(result.message);
       }
       reset();
+      setIsAddProject(false);
     } catch (error) {
       console.error(error);
       toast.error("Something went wrong!");
@@ -56,114 +57,112 @@ const AddProjectModal = ({ isAddProject, setIsAddProject }: TProps) => {
         !isAddProject && "hidden"
       } fixed top-0 left-0 w-full h-full overflow-y-scroll flex justify-center z-40 bg-gray-700/90 pt-10 pb-20 px-4`}
     >
-      <div className="w-[700px] h-fit rounded-md p-4 bg-gray-100">
-        <h2 className="text-2xl font-semibold text-gray-700 mb-10">
+      <div className="w-[1200px] h-screen rounded-md p-4 bg-[#09867E]">
+        <h2 className="text-2xl font-semibold text-white mb-10 text-center">
           Add Project
         </h2>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="mb-5">
-            <p className="font-semibold text-gray-600 text-sm mb-2">Name</p>
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="grid lg:grid-cols-2 gap-5"
+        >
+          <div>
+            <p className="font-semibold text-white text-sm mb-2">Name</p>
             <input
               type="text"
-              className="bg-gray-100 border-2 border-gray-300 p-3 w-full rounded-md overflow-hidden"
+              className="bg-white text-black p-3 w-full rounded-md overflow-hidden"
               {...register("name", { required: true })}
+              placeholder="name"
             />
           </div>
-          <div className="mb-5">
-            <p className="font-semibold text-gray-600 text-sm mb-2">
+          <div>
+            <p className="font-semibold text-white text-sm mb-2">
+              {" "}
               Description
             </p>
-            <textarea
-              className="bg-gray-100 border-2 border-gray-300 p-3 w-full rounded-md overflow-hidden"
-              {...register("description", { required: true })}
-            />
-          </div>
-          <div className="mb-5">
-            <p className="font-semibold text-gray-600 text-sm mb-2">
-              Features{" "}
-              <span className="text-cyan-600 font-medium">
-                (separated by comma)
-              </span>
-            </p>
             <input
               type="text"
-              className="bg-gray-100 border-2 border-gray-300 p-3 w-full rounded-md overflow-hidden"
+              className="bg-white text-black p-3 w-full rounded-md overflow-hidden"
+              {...register("description", { required: true })}
+              placeholder="description"
+            />
+          </div>
+          <div>
+            <p className="font-semibold text-white text-sm mb-2">Features </p>
+            <input
+              type="text"
+              className="bg-white p-3 w-full rounded-md overflow-hidden"
+              placeholder="features"
               {...register("features", { required: true })}
             />
           </div>
-          <div className="mb-5">
-            <p className="font-semibold text-gray-600 text-sm mb-2">
+          <div>
+            <p className="font-semibold text-white text-sm mb-2">
               Frontend Technologies{" "}
-              <span className="text-cyan-600 font-medium">
-                (separated by comma)
-              </span>
             </p>
             <input
               type="text"
-              className="bg-gray-100 border-2 border-gray-300 p-3 w-full rounded-md overflow-hidden"
+              className="bg-white p-3 w-full rounded-md overflow-hidden"
               {...register("frontendTechnologies", { required: true })}
+              placeholder="frontend technologies"
             />
           </div>
-          <div className="mb-5">
-            <p className="font-semibold text-gray-600 text-sm mb-2">
+          <div>
+            <p className="font-semibold text-white text-sm mb-2">
               Backend Technologies{" "}
-              <span className="text-cyan-600 font-medium">
-                (separated by comma)
-              </span>
             </p>
             <input
               type="text"
-              className="bg-gray-100 border-2 border-gray-300 p-3 w-full rounded-md overflow-hidden"
+              className="bg-white p-3 w-full rounded-md overflow-hidden"
               {...register("backendTechnologies", { required: true })}
+              placeholder="backend technologies"
             />
           </div>
-          <div className="mb-5">
-            <p className="font-semibold text-gray-600 text-sm mb-2">
-              Live Link
-            </p>
+          <div>
+            <p className="font-semibold text-white text-sm mb-2">Live Link</p>
             <input
               type="url"
-              className="bg-gray-100 border-2 border-gray-300 p-3 w-full rounded-md overflow-hidden"
+              className="bg-white p-3 w-full rounded-md overflow-hidden"
               {...register("liveLink", { required: true })}
+              placeholder="live link"
             />
           </div>
-          <div className="mb-5">
-            <p className="font-semibold text-gray-600 text-sm mb-2">
+          <div>
+            <p className="font-semibold text-white text-sm mb-2">
               Frontend Repo
             </p>
             <input
               type="url"
-              className="bg-gray-100 border-2 border-gray-300 p-3 w-full rounded-md overflow-hidden"
+              className="bg-white p-3 w-full rounded-md overflow-hidden"
               {...register("frontendRepo", { required: true })}
+              placeholder="frontend repository"
             />
           </div>
-          <div className="mb-5">
-            <p className="font-semibold text-gray-600 text-sm mb-2">
+          <div>
+            <p className="font-semibold text-white text-sm mb-2">
               Backend Repo
             </p>
             <input
               type="url"
-              className="bg-gray-100 border-2 border-gray-300 p-3 w-full rounded-md overflow-hidden"
+              className="bg-white p-3 w-full rounded-md overflow-hidden"
               {...register("backendRepo", { required: true })}
+              placeholder="backend repository"
             />
           </div>
-          <div className="mb-5">
-            <p className="font-semibold text-gray-600 text-sm mb-2">
+          <div>
+            <p className="font-semibold text-white text-sm mb-2">
               Image Links{" "}
-              <span className="text-cyan-600 font-medium">
-                (separated by comma)
-              </span>
             </p>
             <input
               type="text"
-              className="bg-gray-100 border-2 border-gray-300 p-3 w-full rounded-md overflow-hidden"
+              className="bg-white p-3 w-full rounded-md overflow-hidden"
               {...register("imageLinks", { required: true })}
+              placeholder="image links"
             />
           </div>
-          <div className="grid grid-cols-2 gap-5 mb-5">
+          <div className="grid grid-cols-2 gap-5">
             <button
               type="submit"
-              className="flex justify-center items-center gap-1 bg-cyan-600 text-gray-100 font-semibold hover:bg-cyan-700 transition-all duration-300 ease-in-out p-3 rounded-md"
+              className="font-semibold text-white bg-[#091886] rounded-md"
             >
               {isLoading && <SmallSpinner />}
               Submit
@@ -171,7 +170,7 @@ const AddProjectModal = ({ isAddProject, setIsAddProject }: TProps) => {
             <button
               onClick={() => setIsAddProject(false)}
               type="button"
-              className="bg-red-500 text-gray-100 font-semibold hover:bg-red-700 transition-all duration-300 ease-in-out p-3 rounded-md"
+              className="font-semibold text-white bg-red-400 rounded-md"
             >
               Cancel
             </button>

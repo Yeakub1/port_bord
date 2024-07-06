@@ -1,11 +1,10 @@
 "use client";
+import { FaPlus } from "react-icons/fa6";
+import { useEffect, useState } from "react";
 import LargeSpinner from "@/components/Spinner/LargeSpinner";
 import AddProjectModal from "@/components/dashboard/Modal/AddProjectModal";
-import SingleProject from "@/components/dashboard/SingleProject/SingleProject";
 import { useGetProjectsQuery } from "@/redux/features/projects/projectsApi";
-import Image from "next/image";
-import { useEffect, useState } from "react";
-import { FaPlus } from "react-icons/fa6";
+import SingleProject from "@/components/dashboard/SingleProject/SingleProject";
 
 const ProjectsPage = () => {
   const [isAddProject, setIsAddProject] = useState(false);
