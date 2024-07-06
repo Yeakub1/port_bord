@@ -38,7 +38,7 @@ const SingleProject = ({ item }: { item: any }) => {
       >
         <div className="h-[240px] md:h-[280px] mb-5 rounded-md overflow-hidden">
           <Image
-            src={item.image}
+            src={item.imageLinks[0]}
             alt={item.name}
             width={500}
             height={200}
@@ -52,7 +52,7 @@ const SingleProject = ({ item }: { item: any }) => {
           <div className="grid grid-cols-2 gap-5">
             <button
               onClick={() => setIsEditProject(true)}
-              className="bg-cyan-600 hover:bg-cyan-700 transition-all duration-300 ease-in-out rounded-md py-2 text-gray-100 font-semibold"
+              className="bg-[#09867E] rounded-md py-2 text-gray-100 font-semibold"
             >
               Edit
             </button>

@@ -48,13 +48,13 @@ const SingleBlog = ({ blog }: { blog: any }) => {
           <div className="grid grid-cols-2 gap-5 mt-auto">
             <button
               onClick={() => setIsEditBlog(true)}
-              className="py-2 bg-cyan-600 hover:bg-cyan-800 transition-colors duration-300 ease-in-out text-gray-100 font-semibold"
+              className="py-2 bg-[#09867E] rounded-md text-gray-100 font-semibold"
             >
               Edit
             </button>
             <button
               onClick={handleDelete}
-              className=" flex justify-center items-center gap-1 py-2 bg-red-500 hover:bg-red-800 transition-colors duration-300 ease-in-out text-gray-100 font-semibold"
+              className=" flex justify-center items-center gap-1 py-2 bg-red-500 hover:bg-red-800 transition-colors duration-300 ease-in-out text-gray-100 font-semibold rounded-md"
             >
               {isLoading && <SmallSpinner />}
               Delete

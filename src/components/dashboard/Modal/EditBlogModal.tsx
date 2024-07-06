@@ -59,13 +59,11 @@ const EditBlogModal = ({ isEditBlog, setIsEditBlog, blog }: TProps) => {
         !isEditBlog && "hidden"
       } fixed top-0 left-0 w-full h-full overflow-y-scroll flex justify-center z-40 bg-gray-700/90 pt-10 pb-20 px-4`}
     >
-      <div className="w-[1000px] h-fit rounded-md p-4 bg-gray-100">
-        <h2 className="text-2xl font-semibold text-gray-700 mb-10">
-          Edit Blog
-        </h2>
+      <div className="w-[1000px] h-fit rounded-md p-4 bg-[#09867E] text-white">
+        <h2 className="text-2xl text-center font-semibold  mb-10">Edit Blog</h2>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="flex flex-col mb-5">
-            <label className="text-gray-600 font-medium mb-1">Title</label>
+            <label className="font-medium mb-1">Title</label>
             <input
               type="text"
               className="input input-bordered rounded-sm text-gray-600 bg-gray-50"
@@ -73,9 +71,7 @@ const EditBlogModal = ({ isEditBlog, setIsEditBlog, blog }: TProps) => {
             />
           </div>
           <div className="flex flex-col mb-5">
-            <label className="text-gray-600 font-medium mb-1">
-              Cover Photo
-            </label>
+            <label className="font-medium mb-1">Cover Photo</label>
             <input
               type="text"
               className="input input-bordered rounded-sm text-gray-600 bg-gray-50"
@@ -83,7 +79,7 @@ const EditBlogModal = ({ isEditBlog, setIsEditBlog, blog }: TProps) => {
             />
           </div>
           <div className="flex flex-col mb-5">
-            <label className="text-gray-600 font-medium mb-1">Category</label>
+            <label className=" font-medium mb-1">Category</label>
             <input
               type="text"
               className="input input-bordered rounded-sm text-gray-600 bg-gray-50"
@@ -91,7 +87,7 @@ const EditBlogModal = ({ isEditBlog, setIsEditBlog, blog }: TProps) => {
             />
           </div>
           <div className="flex flex-col mb-5">
-            <label className="text-gray-600 font-medium mb-1">Content</label>
+            <label className=" font-medium mb-1">Content</label>
             <JoditEditor
               ref={editor}
               value={content}
@@ -102,7 +98,7 @@ const EditBlogModal = ({ isEditBlog, setIsEditBlog, blog }: TProps) => {
           <div className="grid grid-cols-2 gap-5 mb-5">
             <button
               type="submit"
-              className="flex justify-center items-center gap-1 bg-cyan-600 text-gray-100 font-semibold hover:bg-cyan-700 transition-all duration-300 ease-in-out p-3 rounded-md"
+              className="bg-[#091886] font-semibold p-2 rounded-md"
             >
               {isLoading && <SmallSpinner />}
               Submit
@@ -110,7 +106,7 @@ const EditBlogModal = ({ isEditBlog, setIsEditBlog, blog }: TProps) => {
             <button
               onClick={() => setIsEditBlog(false)}
               type="button"
-              className="bg-red-500 text-gray-100 font-semibold hover:bg-red-700 transition-all duration-300 ease-in-out p-3 rounded-md"
+              className="bg-red-400 font-semibold p-2 rounded-md"
             >
               Cancel
             </button>

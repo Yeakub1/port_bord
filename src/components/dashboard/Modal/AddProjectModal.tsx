@@ -57,7 +57,7 @@ const AddProjectModal = ({ isAddProject, setIsAddProject }: TProps) => {
         !isAddProject && "hidden"
       } fixed top-0 left-0 w-full h-full overflow-y-scroll flex justify-center z-40 bg-gray-700/90 pt-10 pb-20 px-4`}
     >
-      <div className="w-[1200px] h-screen rounded-md p-4 bg-[#09867E]">
+      <div className="w-[1200px] h-fit rounded-md p-4 bg-[#09867E]">
         <h2 className="text-2xl font-semibold text-white mb-10 text-center">
           Add Project
         </h2>

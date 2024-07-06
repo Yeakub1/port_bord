@@ -26,7 +26,7 @@ const ProjectsPage = () => {
         <h2 className="text-3xl text-gray-600 ">Projects</h2>
         <button
           onClick={() => setIsAddProject(true)}
-          className="flex items-center gap-1 bg-cyan-600 hover:bg-cyan-700 transition-all duration-300 ease-in-out rounded-md font-semibold text-gray-100 py-1 px-5"
+          className="flex items-center gap-1 bg-[#09867E] rounded-md font-semibold text-gray-100 py-1 px-5"
         >
           <FaPlus className="-mt-1" /> Add Project
         </button>

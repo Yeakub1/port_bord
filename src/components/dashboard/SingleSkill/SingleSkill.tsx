@@ -47,7 +47,7 @@ const SingleSkill = ({ item, index }: SingleSkillType) => {
         <div className="flex sm:justify-end gap-3">
           <button
             onClick={() => setIsEditSkill(true)}
-            className="flex justify-center items-center text-sm font-semibold text-gray-100 bg-cyan-600 hover:bg-cyan-800 transition-all duration-300 ease-in-out py-1 w-[120px] rounded-md"
+            className="flex justify-center items-center text-sm font-semibold text-gray-100 bg-[#09867E] py-1 w-[120px] rounded-md"
           >
             Edit
           </button>

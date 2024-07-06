@@ -37,44 +37,45 @@ const AddBlog = () => {
   };
 
   return (
-    <div className="bg-gray-100 p-4">
-      <h2 className="text-2xl text-gray-700 mb-10">Add Blog</h2>
+    <div className="bg-[#09867E] text-white p-4">
+      <h2 className="text-2xl text-center font-bold mb-10">Add Blog</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="flex flex-col mb-5">
-          <label className="text-gray-600 font-medium mb-1">Title</label>
+          <label className=" font-medium mb-1">Title</label>
           <input
             type="text"
-            className="input input-bordered rounded-sm text-gray-600 bg-gray-50"
+            className="input input-bordered rounded-sm text-black bg-gray-50"
             {...register("title", { required: true })}
           />
         </div>
         <div className="flex flex-col mb-5">
-          <label className="text-gray-600 font-medium mb-1">Cover Photo</label>
+          <label className=" font-medium mb-1">Cover Photo</label>
           <input
             type="text"
-            className="input input-bordered rounded-sm text-gray-600 bg-gray-50"
+            className="input input-bordered rounded-sm text-black bg-gray-50"
             {...register("coverPhoto", { required: true })}
           />
         </div>
         <div className="flex flex-col mb-5">
-          <label className="text-gray-600 font-medium mb-1">Category</label>
+          <label className=" font-medium mb-1">Category</label>
           <input
             type="text"
-            className="input input-bordered rounded-sm text-gray-600 bg-gray-50"
+            className="input input-bordered rounded-sm text-black bg-gray-50"
             {...register("category", { required: true })}
           />
         </div>
         <div className="flex flex-col mb-5">
-          <label className="text-gray-600 font-medium mb-1">Content</label>
+          <label className=" font-medium mb-1">Content</label>
           <JoditEditor
             ref={editor}
             value={content}
             config={config}
+            className="text-black"
             onChange={(newContent) => setContent(newContent)}
           />
         </div>
         <button
-          className="flex items-center justify-center w-[200px] py-2 font-semibold bg-cyan-600 hover:bg-cyan-800 transition-colors duration-300 ease-in-out  rounded-md text-gray-100"
+          className="flex items-center justify-center w-full mt-3 py-2 font-semibold bg-[#091886] rounded-md text-gray-100"
           type="submit"
         >
           {isLoading && <SmallSpinner />}

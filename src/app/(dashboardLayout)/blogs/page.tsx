@@ -29,12 +29,12 @@ const BlogsPage = () => {
             onClick={() => setIsAddBlog(false)}
             className="flex items-center gap-1 bg-red-500 hover:bg-red-700 transition-all duration-300 ease-in-out rounded-md font-semibold text-gray-100 py-1 px-5"
           >
-            <TiArrowBack className="-mt-1" /> Return
+            <TiArrowBack className="-mt-1" /> Back
           </button>
         ) : (
           <button
             onClick={() => setIsAddBlog(true)}
-            className="flex items-center gap-1 bg-cyan-600 hover:bg-cyan-700 transition-all duration-300 ease-in-out rounded-md font-semibold text-gray-100 py-1 px-5"
+            className="flex items-center gap-1 bg-[#09867E] rounded-md font-semibold text-gray-100 py-1 px-5"
           >
             <FaPlus className="-mt-1" /> Add Blogs
           </button>
